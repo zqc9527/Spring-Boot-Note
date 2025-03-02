@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大爱仙尊经典语录背景音乐示例</title>
+    <style>
+        /* 隐藏音频控件 */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>欢迎来到我的网页</h1>
+<p>这是一个带有大爱仙尊经典语录背景音乐的示例。</p>
+
+<!-- 使用audio标签插入背景音乐 -->
+<audio id="backgroundMusic" autoplay loop>
+    <source src="file:///D:\Users\zqc9527\Desktop\SpringBoot\docs\01\Image\这世界真是英杰无数.mp3" type="audio/mpeg">
+    您的浏览器不支持HTML5音频元素。
+</audio>
+
+<script>
+    // 获取audio元素
+    var backgroundMusic = document.getElementById('backgroundMusic');
+
+    // 尝试自动播放（注意：现代浏览器可能会阻止自动播放）
+    function tryAutoPlay() {
+        try {
+            if (backgroundMusic.play) {
+                backgroundMusic.play().catch(function(error) {
+                    console.log("自动播放被阻止:", error);
+                    // 如果自动播放被阻止，可以在这里添加处理逻辑
+                });
+            }
+        } catch (err) {
+            console.error("无法自动播放音频: ", err);
+        }
+    }
+
+    // 页面加载完成后尝试自动播放
+    window.addEventListener('load', tryAutoPlay);
+
+    // 如果需要控制背景音乐的播放/暂停，可以在此添加更多逻辑
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大爱仙尊经典语录背景音乐示例</title>
+    <style>
+        /* 隐藏音频控件 */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>欢迎来到我的网页</h1>
+<p>这是一个带有大爱仙尊经典语录背景音乐的示例。</p>
+
+<!-- 添加一个按钮用于手动控制播放/暂停 -->
+<button id="playButton">播放背景音乐</button>
+
+<!-- 使用audio标签插入背景音乐 -->
+<audio id="backgroundMusic" loop>
+    <source src="file:///D:\Users\zqc9527\Desktop\SpringBoot\docs\01\Image\这世界真是英杰无数.mp3" type="audio/mpeg">
+    您的浏览器不支持HTML5音频元素。
+</audio>
+
+<script>
+    // 获取audio元素和按钮元素
+    var backgroundMusic = document.getElementById('backgroundMusic');
+    var playButton = document.getElementById('playButton');
+
+    // 为按钮添加事件监听器以允许用户手动控制播放/暂停
+    playButton.addEventListener('click', function() {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            this.textContent = '暂停背景音乐';
+            console.log("用户点击播放");
+        } else {
+            backgroundMusic.pause();
+            this.textContent = '播放背景音乐';
+            console.log("用户点击暂停");
+        }
+    });
+</script>
+
+</body>
+</html>
